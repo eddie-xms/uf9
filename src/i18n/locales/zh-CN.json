@@ -1,0 +1,384 @@
+{
+  "nav": {
+    "home": "首页",
+    "games": "游戏",
+    "about": "关于我们",
+    "login": "登录",
+    "register": "注册",
+    "investors": "股东",
+    "platform": "平台",
+    "profitModel": "盈利模式",
+    "dividends": "分红",
+    "growth": "增长体系",
+    "stats": "数据",
+    "download": "下载"
+  },
+  "investorHero": {
+    "badge": "股东权益计划",
+    "title1": "携手 ",
+    "title2": "UF9",
+    "title3": "全球利润共享",
+    "subtitle": "超越传统代理模式 — 参与公司真实利润分配，每日自动结算分红。新一代股东模式，专为长期财富增长设计。",
+    "cta": "成为股东",
+    "ctaSecondary": "了解更多",
+    "tagline": "宇宙财富 · 全球共享 · 未来同行",
+    "dailyDividend": "每日分红",
+    "perDay": "每日"
+  },
+  "profitModel": {
+    "heading": "股东",
+    "headingHighlight": "盈利模式",
+    "subtitle": "看看 UF9 股东模式如何从根本上超越传统佣金平台",
+    "legacyBadge": "传统平台",
+    "legacyTitle": "传统代理模式",
+    "uf9Badge": "UF9 股东",
+    "uf9Title": "利润分享模式",
+    "legacy": {
+      "commission": {
+        "title": "仅佣金制",
+        "desc": "收入主要来自推广佣金，本质上是销售模式。"
+      },
+      "fixedRatio": {
+        "title": "固定佣金比例",
+        "desc": "固定佣金比例限制了增长潜力。"
+      },
+      "noProfit": {
+        "title": "无公司利润参与",
+        "desc": "代理仅获得推广返利，无法分享公司利润。"
+      },
+      "incomeCap": {
+        "title": "收入上限",
+        "desc": "收入取决于个人推广能力和资源，增长有限。"
+      }
+    },
+    "uf9": {
+      "profitSharing": {
+        "title": "利润分享",
+        "desc": "参与公司整体利润分配，不仅仅是推广收入。"
+      },
+      "contributionDividend": {
+        "title": "贡献制分红",
+        "desc": "贡献越多，分红越高，体现公平与成长。"
+      },
+      "netProfit": {
+        "title": "参与净利润",
+        "desc": "股东分享公司净利润，与公司利益一致。"
+      },
+      "growthExpansion": {
+        "title": "随公司扩张增长",
+        "desc": "收入随公司扩张而增长，没有固定比例限制。"
+      }
+    }
+  },
+  "dividendFormula": {
+    "heading": "每日分红",
+    "headingHighlight": "计算公式",
+    "subtitle": "透明、自动化、每日结算 — 无需再等月结",
+    "formula": "（个人流水 ÷ 公司流水）× 净利润 × 持股比例 = 每日分红",
+    "personalTurnover": "个人流水",
+    "companyTurnover": "公司流水",
+    "ratio": "贡献占比",
+    "netProfit": "公司净利润",
+    "shareholding": "持股比例",
+    "dailyDividend": "每日分红",
+    "yourRatio": "您的占比",
+    "profitShare": "利润份额",
+    "projectedDaily": "预计每日",
+    "calculatorTitle": "分红计算器",
+    "calculatorSubtitle": "调整滑块查看您的预计每日分红"
+  },
+  "coreStrengths": {
+    "subtitle": "我们不只是搭建平台 — 我们构建完整的利润增长系统。"
+  },
+  "growthEcosystem": {
+    "heading": "三方共赢",
+    "headingHighlight": "盈利生态",
+    "subtitle": "平台、直播主与代理协同合作，形成利润共享模式，驱动持续增长",
+    "participants": [
+      { "title": "平台", "desc": "技术、游戏与结算基础设施" },
+      { "title": "直播主与KOL", "desc": "直播流量、互动参与、玩家获取" },
+      { "title": "代理", "desc": "网络建设、推荐与团队增长" }
+    ],
+    "tagline": "平台 + 直播主 + 代理 = 三方共赢盈利生态"
+  },
+  "retentionSystem": {
+    "heading": "玩家留存",
+    "headingHighlight": "LTV 系统",
+    "subtitle": "通过智能分层和专属跟进服务，最大化玩家终身价值 — 系统化的长期留存方案",
+    "legacyTitle": "传统跟进方式",
+    "uf9Title": "UF9 LTV 系统",
+    "legacy": {
+      "noSegmentation": "无玩家分层",
+      "noStrategy": "无长期策略",
+      "noRetention": "无留存重点"
+    },
+    "uf9": {
+      "smartSegmentation": "智能玩家分层",
+      "oneOnOne": "一对一跟进团队",
+      "campaignSupport": "活动运营支持",
+      "userLoyalty": "更高活跃度与用户忠诚"
+    }
+  },
+  "closedLoopGrowth": {
+    "systemSummary": "获客 + 激励 + 留存 + 变现 + 分红 = 完整闭环增长系统"
+  },
+  "investorCTA": {
+    "heading": "准备好",
+    "headingHighlight": "与我们共同成长？",
+    "subtitle": "加入 UF9 股东计划，开始从全球娱乐平台获取每日分红。",
+    "ctaPrimary": "联系我们",
+    "ctaSecondary": "下载白皮书",
+    "badges": ["国际正规牌照", "每日结算", "100% 透明"]
+  },
+  "hero": {
+    "badge": "全球顶级线上娱乐平台",
+    "title1": "赢在 ",
+    "title2": "UF9",
+    "title3": "极致游戏体验",
+    "subtitle": "全球领先的线上娱乐平台，采用先进技术与智能结算系统。超过1,000款精选游戏，支持多币种结算，极速提款。",
+    "cta": "立即加入",
+    "ctaSecondary": "了解更多",
+    "tagline": "全球娱乐 · 极致游戏 · 终极体验",
+    "verifiedBy": "认证机构"
+  },
+  "stats": {
+    "heading": "为什么选择",
+    "headingHighlight": "UF9",
+    "subtitle": "让数据为我们说话",
+    "providers": "游戏供应商",
+    "providersCount": "50+",
+    "providersGrowth": "顶级合作伙伴",
+    "games": "精选游戏",
+    "gamesCount": "1,000+",
+    "gamesGrowth": "持续增长中",
+    "withdrawal": "极速提款",
+    "withdrawalCount": "3",
+    "withdrawalUnit": "分钟",
+    "withdrawalGrowth": "业界最快",
+    "payment": "支付方式",
+    "paymentCount": "150+",
+    "paymentGrowth": "全球覆盖",
+    "uptime": "稳定运行",
+    "uptimeCount": "99.9%",
+    "uptimeGrowth": "全天候在线"
+  },
+  "games": {
+    "heading": "热门",
+    "headingHighlight": "游戏",
+    "subtitle": "与全球顶级游戏供应商合作，为您带来最丰富的游戏体验",
+    "playNow": "立即游玩",
+    "gamesAvailable": "款游戏",
+    "highlights": {
+      "games": "1000+ 游戏",
+      "gamesDesc": "顶级供应商",
+      "fast": "极速流畅",
+      "fastDesc": "零延迟",
+      "secure": "安全可靠",
+      "secureDesc": "资金保障",
+      "service": "全天候服务",
+      "serviceDesc": "24/7 不间断"
+    },
+    "slots": {
+      "title": "老虎机",
+      "badge": "最受欢迎",
+      "description": "高RTP老虎机、经典老虎机及创新老虎机游戏 — 从经典三轴到最新视频老虎机，带来最丰富的游戏体验。",
+      "bullet1": "500+ 精选游戏",
+      "bullet2": "累积奖池高达百万",
+      "bullet3": "免费旋转与奖励功能",
+      "bullet4": "完美适配移动端",
+      "count": "500+"
+    },
+    "liveCasino": {
+      "title": "真人娱乐城",
+      "badge": "高清直播",
+      "description": "真人百家乐、真人轮盘、龙虎、骰宝 — 与专业荷官实时互动，高清视频多角度直播。",
+      "bullet1": "专业荷官团队",
+      "bullet2": "百家乐 / 轮盘 / 骰宝",
+      "bullet3": "高清多角度直播",
+      "bullet4": "VIP 专属桌台",
+      "count": "50+"
+    },
+    "sportsbook": {
+      "title": "体育博彩",
+      "badge": "全球赛事",
+      "description": "足球、篮球、电竞及全面体育市场。实时赔率更新，多元化投注选项。",
+      "bullet1": "足球 / 篮球 / 网球",
+      "bullet2": "实时滚球投注",
+      "bullet3": "业界最佳赔率",
+      "bullet4": "赛事数据分析",
+      "count": "1000+"
+    },
+    "p2pPoker": {
+      "title": "P2P 德州扑克",
+      "badge": "实时对战",
+      "description": "实时PVP竞技，高额桌台、锦标赛模式及多层次玩法。支持高流动性与快速结算。",
+      "bullet1": "德州扑克 / 21点",
+      "bullet2": "高额桌台",
+      "bullet3": "锦标赛模式",
+      "bullet4": "快速结算系统",
+      "count": "100+"
+    },
+    "esports": {
+      "title": "电竞平台",
+      "badge": "实时投注",
+      "description": "顶级电竞赛事，实时数据同步及多元化投注格式。",
+      "bullet1": "英雄联盟 / DOTA2",
+      "bullet2": "CS2 / Valorant",
+      "bullet3": "赛事实时直播",
+      "bullet4": "专业数据分析",
+      "count": "200+"
+    },
+    "highFrequency": {
+      "title": "高频游戏",
+      "badge": "快速开局",
+      "description": "快速开局游戏，轻松上手，玩法多样。快速回合、多种模式、轻松有趣的体验。",
+      "bullet1": "快节奏竞技投注",
+      "bullet2": "多种游戏模式",
+      "bullet3": "轻松有趣的玩法",
+      "bullet4": "快速结算",
+      "count": "150+"
+    },
+    "boardGames": {
+      "title": "热门棋牌区",
+      "badge": "策略竞技",
+      "description": "多人实时对战，排名系统及竞技模式。高额桌台、金币与积分模式。",
+      "bullet1": "麻将 / 斗地主",
+      "bullet2": "排名系统",
+      "bullet3": "竞技模式",
+      "bullet4": "多人实时对战",
+      "count": "100+"
+    }
+  },
+  "partner": {
+    "heading": "携手共赢",
+    "headingHighlight": "UF9",
+    "subtitle": "新一代股东分红模式 — 与平台共同成长，享受持续分红收益",
+    "learnMore": "成为合伙人",
+    "coreStrengths": {
+      "title": "平台核心优势",
+      "items": [
+        { "title": "多币种结算", "desc": "支持美元、马币、泰铢、越南盾、印尼盾及加密资产 — 全球无缝结算" },
+        { "title": "智能结算引擎", "desc": "实时自动清算，透明的利润分配机制，覆盖所有利益相关方" },
+        { "title": "实时数据报表", "desc": "实时仪表盘追踪流水、利润、玩家活动及转化率" },
+        { "title": "高稳定性架构", "desc": "99.9% 在线率、负载均衡、DDoS 防护 — 企业级基础设施" }
+      ]
+    },
+    "systems": {
+      "traffic": {
+        "badge": "增长引擎",
+        "title": "直播流量增长系统",
+        "desc": "完整的直播主、KOL 及奖励驱动获客生态，持续为平台输送新玩家。",
+        "points": [
+          "专业直播主与 KOL 网络",
+          "实时推荐奖励机制",
+          "三方利润分成：平台、代理、直播主",
+          "自动化追踪与归因系统",
+          "社交裂变分享整合"
+        ]
+      },
+      "followup": {
+        "badge": "留存系统",
+        "title": "专属跟进服务系统",
+        "desc": "智能玩家分层，配备专属一对一客服经理，最大化玩家终身价值，降低流失率。",
+        "points": [
+          "AI 驱动玩家分层",
+          "一对一专属客服经理",
+          "基于生命周期的运营活动",
+          "流失预警与挽留策略",
+          "玩家 LTV 优化方案"
+        ]
+      },
+      "payment": {
+        "badge": "资金安全",
+        "title": "全球支付与资金系统",
+        "desc": "24/7 自动化清算，多汇率支持。快速存款、即时提款、完全资金透明。",
+        "points": [
+          "24/7 自动存取款",
+          "多汇率清算支持",
+          "覆盖 10+ 国家本地银行",
+          "加密货币与稳定币支持",
+          "实时资金流监控"
+        ]
+      }
+    },
+    "comparison": {
+      "title": "UF9 vs 传统平台",
+      "subtitle": "看看 UF9 股东模式如何全面超越传统代理平台",
+      "headers": ["对比项", "传统平台", "UF9 平台"],
+      "rows": [
+        ["盈利模式", "仅固定佣金", "每日分红 + 利润分成"],
+        ["结算方式", "月结人工结算", "实时自动清算"],
+        ["透明度", "不透明，依赖代理", "全面实时数据看板"],
+        ["玩家留存", "无系统化跟进", "AI 驱动一对一留存"],
+        ["流量增长", "自费获客", "平台赋能直播流量"],
+        ["资金安全", "代理持有资金", "平台托管 + 即时付款"]
+      ]
+    },
+    "dividend": {
+      "title": "每日分红计算",
+      "subtitle": "透明、自动化、每日结算 — 无需再等月结",
+      "formula": "每日分红 = 平台净利润 x 股东占比",
+      "details": [
+        { "label": "净利润", "desc": "总流水减去玩家赢利、奖励及运营成本" },
+        { "label": "股东占比", "desc": "根据投资等级 — 更高等级享受更大的每日利润份额" },
+        { "label": "结算周期", "desc": "每24小时自动计算并分配，全程自动化" }
+      ],
+      "highlight": "无隐藏费用。无人工计算。100% 透明。"
+    },
+    "closedLoop": {
+      "title": "完整闭环",
+      "titleHighlight": "增长系统",
+      "subtitle": "七大核心支柱协同运作，打造自循环盈利引擎",
+      "centerCount": "7",
+      "centerLabel": "大支柱",
+      "pillars": [
+        { "title": "流量获取", "desc": "直播引流、KOL 网络、社交推荐" },
+        { "title": "玩家转化", "desc": "优化注册流程、奖励激励、用户体验设计" },
+        { "title": "留存与互动", "desc": "一对一客服、VIP 计划、忠诚度奖励" },
+        { "title": "变现增收", "desc": "多游戏组合、交叉销售、升级引导" },
+        { "title": "结算与派发", "desc": "实时清算、每日分红、自动分配" },
+        { "title": "数据与分析", "desc": "玩家洞察、转化漏斗、利润看板" },
+        { "title": "再投资", "desc": "利润驱动扩张、市场拓展、产品研发" }
+      ]
+    }
+  },
+  "globalPayment": {
+    "heading": "全球",
+    "headingHighlight": "支付网络",
+    "subtitle": "覆盖东南亚的无缝金融基础设施，支持多币种与加密货币"
+  },
+  "download": {
+    "badge": "立即开始",
+    "title1": "开启您的",
+    "title2": "赢利之旅",
+    "subtitle": "加入UF9，享受极致线上游戏体验。免费注册，首存即享丰厚奖励，从第一天起就开启精彩游戏旅程。",
+    "registerFree": "免费注册",
+    "downloadApp": "下载 APP",
+    "badges": ["免费注册", "即时存款", "全天候客服", "SSL 加密"],
+    "phoneTabs": ["老虎机", "真人", "体育", "棋牌"],
+    "playNow": "立即游玩",
+    "scanToDownload": "扫码下载",
+    "iosAndroid": "iOS & Android",
+    "downloadOn": "下载于",
+    "appStore": "App Store",
+    "getItOn": "下载于",
+    "googlePlay": "Google Play"
+  },
+  "footer": {
+    "description": "全球领先的线上娱乐平台，提供最安全、最公平的游戏环境。",
+    "responsible": "负责任博彩",
+    "age": "18+",
+    "quickLinks": "快捷链接",
+    "quickLinksItems": ["投资者", "平台", "游戏大厅", "VIP 计划", "关于我们"],
+    "gamesTitle": "游戏",
+    "gamesItems": ["老虎机", "真人娱乐城", "体育博彩", "P2P 德州扑克", "电竞平台", "高频游戏", "热门棋牌区"],
+    "support": "支持",
+    "supportItems": ["常见问题", "服务条款", "隐私政策", "负责任博彩", "联系我们"],
+    "contactUs": "联系我们",
+    "contactItems": ["Telegram", "LINE", "在线客服", "电子邮件"],
+    "copyright": "© 2026 UF9. 版权所有。",
+    "licensed": "国际正规牌照",
+    "ssl": "SSL 加密",
+    "fairPlay": "公平游戏认证"
+  }
+}
