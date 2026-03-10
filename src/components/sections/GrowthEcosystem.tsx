@@ -155,11 +155,11 @@ function NetworkDiagram() {
             />
             {/* Inner glow */}
             <circle cx={node.x} cy={node.y} r={22}
-              fill="#E60000" fillOpacity={0.06}
+              fill="#E60000" fillOpacity={0.1}
             />
             {/* Icon placeholder — Lucide icons can't render in SVG, use simple symbols */}
             {node.icon === 'users' && (
-              <g fill="none" stroke="#E60000" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+              <g fill="none" stroke="#E60000" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
                 <circle cx={node.x - 4} cy={node.y - 4} r={3} />
                 <path d={`M ${node.x - 10} ${node.y + 6} a 6 6 0 0 1 12 0`} />
                 <circle cx={node.x + 6} cy={node.y - 4} r={2.5} />
@@ -167,13 +167,13 @@ function NetworkDiagram() {
               </g>
             )}
             {node.icon === 'tv' && (
-              <g fill="none" stroke="#E60000" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+              <g fill="none" stroke="#E60000" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
                 <rect x={node.x - 9} y={node.y - 7} width={18} height={12} rx={2} />
                 <line x1={node.x - 4} y1={node.y + 8} x2={node.x + 4} y2={node.y + 8} />
               </g>
             )}
             {node.icon === 'radio' && (
-              <g fill="none" stroke="#E60000" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+              <g fill="none" stroke="#E60000" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
                 <circle cx={node.x} cy={node.y + 2} r={2} />
                 <path d={`M ${node.x - 5} ${node.y - 3} a 7 7 0 0 1 10 0`} />
                 <path d={`M ${node.x - 8} ${node.y - 6} a 11 11 0 0 1 16 0`} />
