@@ -3,6 +3,7 @@ import { Hero } from '@/components/sections/Hero'
 import { StatsGrid } from '@/components/sections/StatsGrid'
 import { GameCategories } from '@/components/sections/GameCategories'
 import { DownloadApp } from '@/components/sections/DownloadApp'
+import { ShareholderCTA } from '@/components/sections/ShareholderCTA'
 
 export function PlatformPage() {
   return (
@@ -15,6 +16,7 @@ export function PlatformPage() {
       <Hero />
       <StatsGrid />
       <GameCategories />
+      <ShareholderCTA variant="platform" />
       <DownloadApp />
     </motion.div>
   )

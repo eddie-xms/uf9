@@ -43,7 +43,7 @@ function getInitialLocale(): Locale {
     const stored = localStorage.getItem(STORAGE_KEY)
     if (stored === 'en' || stored === 'zh-CN') return stored
   } catch {}
-  return 'en'
+  return 'zh-CN'
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }): ReactNode {

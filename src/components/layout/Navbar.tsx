@@ -113,6 +113,14 @@ export function Navbar() {
           </div>
         </div>
 
+        {/* Mobile backdrop overlay */}
+        {mobileOpen && (
+          <div
+            className="fixed inset-0 z-[-1] lg:hidden"
+            onClick={() => setMobileOpen(false)}
+          />
+        )}
+
         {/* Mobile Navigation Dropdown */}
         <motion.div
           initial={false}

@@ -139,10 +139,11 @@ function PdfCarousel({ label, dir, pages, downloadUrl, downloadLabel }: { label:
   )
 }
 
-export function ShareholderCTA() {
+export function ShareholderCTA({ variant = 'shareholder' }: { variant?: 'shareholder' | 'platform' }) {
   const { t, locale } = useTranslation()
 
-  const shareholder = siteConfig.pdf.shareholder[locale]
+  const pdf = siteConfig.pdf[variant][locale]
+  const labelKey = variant === 'shareholder' ? 'shareholderCTA.shareholderPdf' : 'shareholderCTA.platformPdf'
 
   return (
     <section className="relative py-14 md:py-20 overflow-hidden">
@@ -171,7 +172,7 @@ export function ShareholderCTA() {
           transition={{ duration: 0.5 }}
           className="mb-10"
         >
-          <PdfCarousel label={t('shareholderCTA.shareholderPdf')} dir={shareholder.dir} pages={shareholder.pages} downloadUrl={shareholder.file} downloadLabel={t('shareholderCTA.downloadPdf')} />
+          <PdfCarousel label={t(labelKey)} dir={pdf.dir} pages={pdf.pages} downloadUrl={pdf.file} downloadLabel={t('shareholderCTA.downloadPdf')} />
         </motion.div>
 
         {/* Trust badges */}

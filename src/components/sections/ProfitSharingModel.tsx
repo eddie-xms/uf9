@@ -120,7 +120,7 @@ export function ProfitSharingModel() {
 
           <div>
             {/* Column headers */}
-            <div className="grid grid-cols-[auto_1fr_1fr] gap-2 md:gap-4 mb-3">
+            <div className="grid grid-cols-[auto_1fr_1fr] md:grid-cols-3 gap-2 md:gap-4 mb-3">
               <div />
               <div className="text-center py-3 text-xs md:text-sm font-bold tracking-wide uppercase text-muted-foreground">
                 {t('partner.comparison.headers.1')}
@@ -140,7 +140,7 @@ export function ProfitSharingModel() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.35, delay: 0.05 * rowIdx }}
-                  className="grid grid-cols-[auto_1fr_1fr] gap-2 md:gap-4 items-stretch"
+                  className="grid grid-cols-[auto_1fr_1fr] md:grid-cols-3 gap-2 md:gap-4 items-stretch"
                 >
                   {/* Label */}
                   <div className="flex items-center px-3 py-3 md:px-5 md:py-4 rounded-xl bg-card border border-border-subtle">
