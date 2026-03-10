@@ -21,12 +21,8 @@ const outerProviders = [
 
 function ProviderIcon({ src, name }: { src: string; name: string }) {
   return (
-    <div className="w-full h-full rounded-full bg-card border border-border-subtle shadow-lg shadow-shadow flex items-center justify-center p-1.5 overflow-hidden">
-      <img
-        src={src}
-        alt={name}
-        className="w-full h-full object-contain"
-      />
+    <div className="w-full h-full rounded-full bg-white dark:bg-white/90 border border-border-subtle shadow-lg shadow-shadow flex items-center justify-center p-1.5 overflow-hidden">
+      <img src={src} alt={name} className="w-full h-full object-contain" />
     </div>
   )
 }
@@ -64,7 +60,7 @@ export function Hero() {
               className={`${locale === 'zh-CN' ? 'text-5xl md:text-6xl lg:text-7xl' : 'text-4xl md:text-5xl lg:text-6xl'} font-bold font-display leading-tight`}
             >
               {t('hero.title1')}
-              <img src="/uf9_text_color.png" alt="UF9" className="inline-block h-[1em] align-baseline dark:brightness-0 dark:invert" />
+              <img src="/uf9_text_color.png" alt="UF9" className="inline-block h-[1em] align-baseline" />
               <br />
               <span className="text-foreground">{t('hero.title3')}</span>
             </motion.h1>
@@ -86,12 +82,16 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="flex flex-wrap justify-center lg:justify-start gap-4"
             >
-              <Button variant="primary" size="lg" rounded="full" className="group">
-                {t('hero.cta')}
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              <Button variant="primary" size="lg" rounded="full" className="group" asChild>
+                <a href="https://uf9asia.com/en/home" target="_blank" rel="noopener noreferrer">
+                  {t('hero.cta')}
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
-              <Button variant="outline" size="lg" rounded="full">
-                {t('hero.ctaSecondary')}
+              <Button variant="outline" size="lg" rounded="full" asChild>
+                <a href="https://uf9asia.com/en/home" target="_blank" rel="noopener noreferrer">
+                  {t('hero.ctaSecondary')}
+                </a>
               </Button>
             </motion.div>
 

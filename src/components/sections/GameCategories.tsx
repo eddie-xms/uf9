@@ -143,10 +143,6 @@ export function GameCategories() {
                             loading="lazy"
                             className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110"
                           />
-                          {/* Dark vignette overlay */}
-                          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.4))]" />
-                          {/* Bottom gradient fade to card bg */}
-                          <div className="absolute inset-0 bg-linear-to-t from-[var(--card)] via-[var(--card)]/30 to-transparent" />
                           {/* Red tint overlay on hover */}
                           <div className="absolute inset-0 bg-brand-red-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                           {/* Top edge red glow on hover */}
@@ -185,9 +181,11 @@ export function GameCategories() {
                           </ul>
 
                           {/* CTA */}
-                          <Button variant="primary" size="sm" rounded="full" className="group/btn self-start">
-                            {t('games.playNow')}
-                            <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+                          <Button variant="primary" size="sm" rounded="full" className="group/btn self-start" asChild>
+                            <a href="https://uf9asia.com/en/home" target="_blank" rel="noopener noreferrer">
+                              {t('games.playNow')}
+                              <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+                            </a>
                           </Button>
                         </div>
                       </div>

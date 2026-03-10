@@ -27,8 +27,7 @@ export function ShareholderHero() {
               className={`${locale === 'zh-CN' ? 'text-5xl md:text-6xl lg:text-7xl' : 'text-4xl md:text-5xl lg:text-6xl'} font-bold font-display leading-tight`}
             >
               {t('shareholderHero.title1')}
-              <img src="/uf9_text_color.png" alt="UF9" className="inline-block h-[1em] align-baseline dark:hidden" />
-              <img src="/uf9_text_white.png" alt="UF9" className="hidden dark:inline-block h-[1em] align-baseline" />
+              <img src="/uf9_text_color.png" alt="UF9" className="inline-block h-[1em] align-baseline" />
               <br />
               <span className="text-foreground">{t('shareholderHero.title3')}</span>
             </motion.h1>
@@ -48,12 +47,16 @@ export function ShareholderHero() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-wrap justify-center lg:justify-start gap-4"
             >
-              <Button variant="primary" size="lg" rounded="full" className="group">
-                {t('shareholderHero.cta')}
-                <TrendingUp size={18} className="group-hover:translate-x-1 transition-transform" />
+              <Button variant="primary" size="lg" rounded="full" className="group" asChild>
+                <a href="https://uf9asia.com/en/home" target="_blank" rel="noopener noreferrer">
+                  {t('shareholderHero.cta')}
+                  <TrendingUp size={18} className="group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
-              <Button variant="outline" size="lg" rounded="full">
-                {t('shareholderHero.ctaSecondary')}
+              <Button variant="outline" size="lg" rounded="full" asChild>
+                <a href="https://uf9asia.com/en/home" target="_blank" rel="noopener noreferrer">
+                  {t('shareholderHero.ctaSecondary')}
+                </a>
               </Button>
             </motion.div>
 

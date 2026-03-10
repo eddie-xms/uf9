@@ -192,7 +192,7 @@ export function StatsGrid() {
   const { t } = useTranslation()
 
   return (
-    <section className="py-20">
+    <section id="stats" className="py-20">
       <div className="container-main">
         {/* Header */}
         <motion.div

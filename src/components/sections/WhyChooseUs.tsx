@@ -297,9 +297,11 @@ export function WhyChooseUs() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <Button variant="primary" size="lg" rounded="full" className="group">
-            {t('partner.learnMore')}
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          <Button variant="primary" size="lg" rounded="full" className="group" asChild>
+            <a href="https://uf9asia.com/en/home" target="_blank" rel="noopener noreferrer">
+              {t('partner.learnMore')}
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </a>
           </Button>
         </motion.div>
       </div>

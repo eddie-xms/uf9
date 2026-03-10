@@ -373,6 +373,120 @@
     "getItOn": "Get it on",
     "googlePlay": "Google Play"
   },
+  "faqPage": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about UF9",
+    "items": [
+      {
+        "q": "What is UF9?",
+        "a": "UF9 is a globally licensed online entertainment platform offering over 1,000 curated games including slots, live casino, sportsbook, P2P poker, esports, and more. We provide a safe, fair, and transparent gaming environment."
+      },
+      {
+        "q": "How do I create an account?",
+        "a": "Visit our registration page, fill in your details, verify your identity, and your account will be ready within minutes. You must be at least 18 years old to register."
+      },
+      {
+        "q": "What currencies are supported?",
+        "a": "UF9 supports multiple currencies including major fiat currencies and popular cryptocurrencies. Check our platform for the latest supported payment methods."
+      },
+      {
+        "q": "How do I deposit funds?",
+        "a": "Log in to your account, navigate to the deposit section, choose your preferred payment method, and follow the on-screen instructions. Deposits are processed instantly in most cases."
+      },
+      {
+        "q": "How long do withdrawals take?",
+        "a": "Withdrawal processing times vary by method. E-wallets are typically processed within 24 hours, while bank transfers may take 1–3 business days."
+      },
+      {
+        "q": "Is my personal information secure?",
+        "a": "Yes. UF9 uses industry-standard SSL encryption and follows strict data protection protocols to safeguard your personal and financial information."
+      },
+      {
+        "q": "How does the shareholder program work?",
+        "a": "Our shareholder program allows qualified members to participate in the platform's profit-sharing model. Refer to our shareholder documentation for full details on eligibility and dividend structures."
+      },
+      {
+        "q": "Who do I contact for support?",
+        "a": "You can reach our customer service team 24/7 via WhatsApp live chat. Click the Live Chat link in the footer to get started."
+      }
+    ]
+  },
+  "termsPage": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last Updated: March 2026",
+    "sections": [
+      {
+        "title": "1. Acceptance of Terms",
+        "content": "By accessing or using the UF9 platform, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this platform."
+      },
+      {
+        "title": "2. Eligibility",
+        "content": "You must be at least 18 years of age (or the legal gambling age in your jurisdiction, whichever is higher) to use UF9. By using our services, you represent and warrant that you meet this age requirement and that online gambling is legal in your jurisdiction."
+      },
+      {
+        "title": "3. Account Registration",
+        "content": "You are responsible for maintaining the confidentiality of your account credentials. Each individual may only maintain one account. UF9 reserves the right to suspend or terminate accounts that violate these terms."
+      },
+      {
+        "title": "4. Deposits and Withdrawals",
+        "content": "All deposits and withdrawals are subject to our payment processing policies. UF9 reserves the right to request identity verification before processing withdrawals. Minimum and maximum limits may apply depending on your payment method."
+      },
+      {
+        "title": "5. Fair Play",
+        "content": "UF9 is committed to fair play. Any form of cheating, collusion, or exploitation of system vulnerabilities is strictly prohibited and may result in account suspension, forfeiture of funds, and legal action."
+      },
+      {
+        "title": "6. Intellectual Property",
+        "content": "All content, trademarks, and materials on the UF9 platform are the property of UF9 or its licensors. You may not reproduce, distribute, or create derivative works without explicit written permission."
+      },
+      {
+        "title": "7. Limitation of Liability",
+        "content": "UF9 shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of our platform. Our total liability shall not exceed the amount deposited in your account."
+      },
+      {
+        "title": "8. Modifications",
+        "content": "UF9 reserves the right to modify these Terms of Service at any time. Continued use of the platform after changes constitutes acceptance of the modified terms. Users will be notified of significant changes via email or platform notification."
+      }
+    ]
+  },
+  "privacyPage": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last Updated: March 2026",
+    "sections": [
+      {
+        "title": "1. Information We Collect",
+        "content": "We collect information you provide directly, such as name, email, date of birth, and payment details during registration. We also collect usage data, device information, and cookies to improve our services."
+      },
+      {
+        "title": "2. How We Use Your Information",
+        "content": "Your information is used to provide and maintain our services, process transactions, verify your identity, comply with legal obligations, prevent fraud, and communicate important updates about your account."
+      },
+      {
+        "title": "3. Data Sharing",
+        "content": "We do not sell your personal data. We may share information with trusted third-party service providers (payment processors, identity verification services) solely to operate our platform. We may also disclose data when required by law."
+      },
+      {
+        "title": "4. Data Security",
+        "content": "We implement industry-standard security measures including SSL encryption, secure data storage, and regular security audits to protect your personal information from unauthorized access."
+      },
+      {
+        "title": "5. Data Retention",
+        "content": "We retain your personal data for as long as your account is active or as needed to provide services. After account closure, data may be retained as required by regulatory obligations."
+      },
+      {
+        "title": "6. Your Rights",
+        "content": "You have the right to access, correct, or delete your personal data. You may also request data portability or object to certain processing activities. Contact our support team to exercise these rights."
+      },
+      {
+        "title": "7. Cookies",
+        "content": "We use cookies and similar technologies to enhance your experience, analyze usage patterns, and deliver personalized content. You can manage cookie preferences through your browser settings."
+      },
+      {
+        "title": "8. Contact Us",
+        "content": "For any privacy-related questions or concerns, please contact our customer service team via WhatsApp live chat or email us at support@uf9.com."
+      }
+    ]
+  },
   "footer": {
     "description": "A global online entertainment platform providing the safest and fairest gaming environment.",
     "responsible": "Responsible Gaming",
@@ -382,9 +496,9 @@
     "gamesTitle": "Games",
     "gamesItems": ["Slot Games", "Live Casino", "Sportsbook", "P2P Poker", "Esports", "High-Frequency Games", "Board & Card Games"],
     "support": "Support",
-    "supportItems": ["FAQ", "Terms of Service", "Privacy Policy", "Responsible Gaming", "Contact Us"],
+    "supportItems": ["FAQ", "Terms of Service", "Privacy Policy"],
     "contactUs": "Contact Us",
-    "contactItems": ["Telegram", "LINE", "Live Chat", "Email"],
+    "contactItems": ["Live Chat"],
     "copyright": "© 2026 UF9. All Rights Reserved.",
     "licensed": "Internationally Licensed",
     "ssl": "SSL Encrypted",

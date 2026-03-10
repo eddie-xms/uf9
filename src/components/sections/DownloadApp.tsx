@@ -1,135 +1,182 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Download, QrCode } from 'lucide-react'
+import { ArrowRight, Download, QrCode, Smartphone, Shield, Zap, Headphones, Lock } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { AppleIcon, GooglePlayIcon } from '@/components/icons/StoreIcons'
 import { useTranslation } from '@/i18n'
+
+const badgeIcons = [Smartphone, Zap, Headphones, Lock]
 
 export function DownloadApp() {
   const { t, tArray } = useTranslation()
   const badges = tArray('download.badges')
 
   return (
-    <section className="relative py-14 md:py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-linear-to-br from-brand-red-900/40 via-background-secondary to-background hidden dark:block" />
-      <div className="absolute -top-1/2 -right-1/4 w-200 h-200 bg-brand-red-500/8 rounded-full blur-[150px] hidden dark:block" />
-      <div className="absolute -bottom-1/4 -left-1/4 w-150 h-150 bg-brand-red-500/5 rounded-full blur-[120px] hidden dark:block" />
-      {/* Shimmer top line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-brand-red-500/30 to-transparent hidden dark:block animate-shimmer-line" style={{ backgroundSize: '200% 100%' }} />
+    <section id="download" className="relative py-20 md:py-28 overflow-hidden">
+      {/* Layered background */}
+      <div className="absolute inset-0 bg-linear-to-b from-background via-background to-brand-red-50/40 dark:to-brand-red-900/20" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_100%,rgba(230,0,0,0.08),transparent)] dark:bg-[radial-gradient(ellipse_70%_50%_at_50%_100%,rgba(230,0,0,0.15),transparent)]" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent" />
 
       <div className="relative container-main">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left content */}
+        {/* Header — centered */}
+        <div className="text-center mb-16 md:mb-20">
           <motion.div
-            initial={{ opacity: 0, x: -50, filter: 'blur(10px)' }}
-            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black font-cjk leading-tight mb-4">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black font-cjk leading-tight mb-5">
               {t('download.title1')}
-              <br />
-              <span className="text-gradient-red">{t('download.title2')}</span>
+              <span className="text-gradient-red"> {t('download.title2')}</span>
             </h2>
-
-            <p className="text-muted-foreground text-xl mb-8 leading-relaxed max-w-lg">
+            <p className="text-muted-foreground text-lg md:text-xl max-w-xl mx-auto leading-relaxed">
               {t('download.subtitle')}
             </p>
+          </motion.div>
+        </div>
 
-            <div className="flex flex-wrap gap-4 mb-10">
-              <Button variant="primary" size="lg" rounded="full" className="group">
-                {t('download.registerFree')}
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+        {/* Main showcase — phone center, flanked by info */}
+        <div className="grid lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-0 items-center">
+
+          {/* Left column — CTAs + badges */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="flex flex-col items-center lg:items-end gap-8 order-2 lg:order-1"
+          >
+            {/* CTA buttons stacked */}
+            <div className="flex flex-col gap-3 w-full max-w-xs">
+              <Button variant="primary" size="lg" rounded="full" className="group w-full justify-center" asChild>
+                <a href="https://uf9asia.com/en/home" target="_blank" rel="noopener noreferrer">
+                  {t('download.registerFree')}
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
-              <Button variant="primary" size="lg" rounded="full">
-                <Download size={18} />
-                {t('download.downloadApp')}
+              <Button variant="outline" size="lg" rounded="full" className="w-full justify-center" asChild>
+                <a href="https://uf9asia.com/en/home" target="_blank" rel="noopener noreferrer">
+                  <Download size={18} />
+                  {t('download.downloadApp')}
+                </a>
               </Button>
             </div>
 
-            <div className="flex flex-wrap gap-6 text-base text-faint-foreground">
-              {badges.map((item, i) => (
-                <motion.div
-                  key={item}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.6 + i * 0.1 }}
-                  className="flex items-center gap-2"
-                >
-                  <span className="text-brand-red-400">✓</span>
-                  {item}
-                </motion.div>
-              ))}
+            {/* Feature badges — 2×2 grid */}
+            <div className="grid grid-cols-2 gap-3 w-full max-w-xs">
+              {badges.map((item, i) => {
+                const Icon = badgeIcons[i] || Shield
+                return (
+                  <motion.div
+                    key={item}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.4 + i * 0.08 }}
+                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-card border border-border/60 hover:border-brand-red-500/20 transition-colors"
+                  >
+                    <div className="w-7 h-7 rounded-lg bg-brand-red-500/10 dark:bg-brand-red-500/15 flex items-center justify-center shrink-0">
+                      <Icon size={14} className="text-brand-red-500" />
+                    </div>
+                    <span className="text-sm font-medium text-foreground leading-tight">{item}</span>
+                  </motion.div>
+                )
+              })}
             </div>
           </motion.div>
 
-          {/* Right - Phone mockup + QR */}
+          {/* Center — Phone hero */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="relative flex justify-center order-1 lg:order-2 lg:mx-8"
+          >
+            {/* Glow ring behind phone */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 md:w-80 md:h-80 rounded-full bg-[radial-gradient(circle,rgba(230,0,0,0.12)_0%,transparent_70%)] dark:bg-[radial-gradient(circle,rgba(230,0,0,0.2)_0%,transparent_70%)] blur-xl" />
+
+            {/* Phone container with perspective */}
+            <motion.div
+              animate={{ y: [-6, 6, -6] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+              className="relative z-10"
+            >
+              {/* Phone frame */}
+              <div className="w-56 md:w-60 h-[440px] md:h-[480px] rounded-[2.8rem] bg-gradient-to-b from-zinc-800 to-zinc-900 dark:from-zinc-700 dark:to-zinc-900 p-[3px] shadow-[0_25px_80px_rgba(0,0,0,0.25),0_0_40px_rgba(230,0,0,0.1)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.5),0_0_60px_rgba(230,0,0,0.15)]">
+                <div className="w-full h-full rounded-[2.6rem] overflow-hidden relative bg-black">
+                  <img src="/mobile.png" alt="UF9 App" className="w-full h-full object-cover" />
+                  {/* Screen shine */}
+                  <div className="absolute inset-0 bg-linear-to-br from-white/8 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 animate-screen-reflect bg-linear-to-br from-white/10 via-transparent to-transparent pointer-events-none" />
+                </div>
+              </div>
+
+              {/* Notch */}
+              <div className="absolute top-[3px] left-1/2 -translate-x-1/2 w-24 h-6 rounded-b-2xl bg-black z-20" />
+
+              {/* Bottom glow reflection */}
+              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-48 h-12 bg-[radial-gradient(ellipse_100%_100%_at_50%_0%,rgba(230,0,0,0.12),transparent)] blur-md" />
+            </motion.div>
+          </motion.div>
+
+          {/* Right column — QR + Store badges */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-8"
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="flex flex-col items-center lg:items-start gap-6 order-3"
           >
-            {/* Phone Mockup */}
-            <motion.div
-              animate={{ y: [-8, 0, -8] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              className="relative"
-            >
-              <div className="w-52 h-[420px] rounded-[2.5rem] border-2 border-brand-red-500/20 bg-surface-800 shadow-[0_20px_60px_rgba(230,0,0,0.15),0_8px_25px_rgba(0,0,0,0.3)] overflow-hidden relative">
-                <div className="absolute inset-1 rounded-[2.2rem] overflow-hidden">
-                  <img src="/mobile.png" alt="UF9 App" className="w-full h-full object-cover" />
-                  {/* Screen reflection shimmer */}
-                  <div className="absolute inset-0 bg-linear-to-br from-white/10 via-transparent to-transparent animate-screen-reflect pointer-events-none" />
-                </div>
-                {/* Notch */}
-                <div className="absolute top-1 left-1/2 -translate-x-1/2 w-20 h-5 rounded-b-2xl bg-surface-800 z-10" />
-                {/* Home indicator */}
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-20 h-1 rounded-full bg-white/20 z-10" />
-              </div>
-              {/* Reflected glow beneath phone */}
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-40 h-8 bg-[radial-gradient(ellipse_80%_100%_at_50%_0%,rgba(230,0,0,0.15),transparent)] blur-sm" />
-            </motion.div>
-
-            {/* QR Code + Store Badges */}
-            <div className="flex flex-col items-center gap-4">
-              {/* Gradient border QR container */}
-              <div className="rounded-xl p-px bg-linear-to-b from-brand-red-500/30 to-border-subtle">
-                <div className="w-32 h-32 rounded-[calc(0.75rem-1px)] bg-white p-2 flex items-center justify-center">
-                  <div className="w-full h-full bg-surface-900 rounded-lg flex items-center justify-center">
-                    <QrCode size={64} className="text-brand-red-400" />
+            {/* QR Code card */}
+            <div className="w-full max-w-xs rounded-2xl border border-border/60 bg-card p-5 hover:border-brand-red-500/20 transition-colors">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-24 h-24 rounded-xl bg-white p-2 shrink-0 shadow-sm">
+                  <div className="w-full h-full bg-zinc-100 dark:bg-zinc-200 rounded-lg flex items-center justify-center">
+                    <QrCode size={48} className="text-brand-red-600" />
                   </div>
                 </div>
+                <div>
+                  <p className="font-semibold text-foreground mb-1">{t('download.scanToDownload')}</p>
+                  <p className="text-sm text-muted-foreground">{t('download.iosAndroid')}</p>
+                </div>
               </div>
-              <p className="text-sm text-faint-foreground text-center">
-                {t('download.scanToDownload')}<br />{t('download.iosAndroid')}
-              </p>
 
-              <div className="flex flex-col gap-2 w-full">
-                <div className="relative flex items-center gap-2 px-4 py-2 rounded-xl bg-card border border-border cursor-pointer hover:border-brand-red-500/30 transition-all duration-300 group/store overflow-hidden">
-                  <div className="absolute left-0 top-1/4 bottom-1/4 w-0.5 bg-brand-red-500 rounded-full opacity-0 group-hover/store:opacity-100 transition-opacity duration-300" />
-                  <AppleIcon className="w-6 h-6 text-foreground" />
-                  <div>
-                    <div className="text-xs text-muted-foreground">{t('download.downloadOn')}</div>
+              {/* Store buttons */}
+              <div className="flex flex-col gap-2">
+                <a
+                  href="https://uf9asia.com/en/home"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-foreground/5 hover:bg-foreground/8 border border-border/40 hover:border-brand-red-500/20 transition-all group"
+                >
+                  <AppleIcon className="w-5 h-5 text-foreground" />
+                  <div className="leading-none">
+                    <div className="text-[10px] text-muted-foreground mb-0.5">{t('download.downloadOn')}</div>
                     <div className="text-sm font-semibold text-foreground">{t('download.appStore')}</div>
                   </div>
-                </div>
-                <div className="relative flex items-center gap-2 px-4 py-2 rounded-xl bg-card border border-border cursor-pointer hover:border-brand-red-500/30 transition-all duration-300 group/store overflow-hidden">
-                  <div className="absolute left-0 top-1/4 bottom-1/4 w-0.5 bg-brand-red-500 rounded-full opacity-0 group-hover/store:opacity-100 transition-opacity duration-300" />
-                  <GooglePlayIcon className="w-6 h-6 text-foreground" />
-                  <div>
-                    <div className="text-xs text-muted-foreground">{t('download.getItOn')}</div>
+                </a>
+                <a
+                  href="https://uf9asia.com/en/home"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-foreground/5 hover:bg-foreground/8 border border-border/40 hover:border-brand-red-500/20 transition-all group"
+                >
+                  <GooglePlayIcon className="w-5 h-5 text-foreground" />
+                  <div className="leading-none">
+                    <div className="text-[10px] text-muted-foreground mb-0.5">{t('download.getItOn')}</div>
                     <div className="text-sm font-semibold text-foreground">{t('download.googlePlay')}</div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </motion.div>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-brand-red-500/20 to-transparent hidden dark:block" />
+      {/* Bottom border line */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-brand-red-500/20 to-transparent" />
     </section>
   )
 }

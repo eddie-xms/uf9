@@ -1,14 +1,13 @@
+import { Link } from 'react-router-dom'
 import { useTranslation } from '@/i18n'
+
+const WHATSAPP_URL = 'https://api.whatsapp.com/send?phone=601135475707'
+const EXTERNAL_URL = 'https://uf9asia.com/en/home'
+
+const supportRoutes = ['/faq', '/terms', '/privacy']
 
 export function Footer() {
   const { t, tArray } = useTranslation()
-
-  const sections = [
-    { titleKey: 'footer.quickLinks', itemsKey: 'footer.quickLinksItems' },
-    { titleKey: 'footer.gamesTitle', itemsKey: 'footer.gamesItems' },
-    { titleKey: 'footer.support', itemsKey: 'footer.supportItems' },
-    { titleKey: 'footer.contactUs', itemsKey: 'footer.contactItems' },
-  ]
 
   return (
     <footer className="relative bg-background border-t border-border">
@@ -27,28 +26,90 @@ export function Footer() {
             </div>
           </div>
 
-          {sections.map((section) => (
-            <div key={section.titleKey}>
-              <h4 className="text-base font-bold text-foreground mb-4 font-cjk">
-                {t(section.titleKey)}
-              </h4>
-              <ul className="space-y-2">
-                {tArray(section.itemsKey).map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-base text-faint-foreground hover:text-brand-red-400 transition-colors duration-300"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-base font-bold text-foreground mb-4 font-cjk">
+              {t('footer.quickLinks')}
+            </h4>
+            <ul className="space-y-2">
+              {tArray('footer.quickLinksItems').map((link) => (
+                <li key={link}>
+                  <a
+                    href={EXTERNAL_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-base text-faint-foreground hover:text-brand-red-400 transition-colors duration-300"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Games */}
+          <div>
+            <h4 className="text-base font-bold text-foreground mb-4 font-cjk">
+              {t('footer.gamesTitle')}
+            </h4>
+            <ul className="space-y-2">
+              {tArray('footer.gamesItems').map((link) => (
+                <li key={link}>
+                  <a
+                    href={EXTERNAL_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-base text-faint-foreground hover:text-brand-red-400 transition-colors duration-300"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Support */}
+          <div>
+            <h4 className="text-base font-bold text-foreground mb-4 font-cjk">
+              {t('footer.support')}
+            </h4>
+            <ul className="space-y-2">
+              {tArray('footer.supportItems').map((link, i) => (
+                <li key={link}>
+                  <Link
+                    to={supportRoutes[i]}
+                    className="text-base text-faint-foreground hover:text-brand-red-400 transition-colors duration-300"
+                  >
+                    {link}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Us */}
+          <div>
+            <h4 className="text-base font-bold text-foreground mb-4 font-cjk">
+              {t('footer.contactUs')}
+            </h4>
+            <ul className="space-y-2">
+              {tArray('footer.contactItems').map((link) => (
+                <li key={link}>
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-base text-faint-foreground hover:text-brand-red-400 transition-colors duration-300"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        <div className="py-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="py-6 border-t border-border flex flex-col items-center justify-center gap-4">
           <p className="text-faint-foreground text-base">
             {t('footer.copyright')}
           </p>

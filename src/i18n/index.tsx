@@ -31,6 +31,7 @@ interface I18nContextValue {
   setLocale: (locale: Locale) => void
   t: (key: string) => string
   tArray: (key: string) => string[]
+  tRaw: <T = unknown>(key: string) => T
 }
 
 const I18nContext = createContext<I18nContextValue | null>(null)
@@ -73,8 +74,16 @@ export function LanguageProvider({ children }: { children: ReactNode }): ReactNo
     return result
   }, [locale])
 
+  const tRaw = useCallback(<T = unknown>(key: string): T => {
+    const result = resolve(locales[locale], key)
+    if (result == null && locale !== 'en') {
+      return resolve(locales.en, key) as T
+    }
+    return result as T
+  }, [locale])
+
   return (
-    <I18nContext.Provider value={{ locale, setLocale, t, tArray }}>
+    <I18nContext.Provider value={{ locale, setLocale, t, tArray, tRaw }}>
       {children}
     </I18nContext.Provider>
   )

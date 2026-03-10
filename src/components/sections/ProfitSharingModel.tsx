@@ -120,12 +120,12 @@ export function ProfitSharingModel() {
 
           <div>
             {/* Column headers */}
-            <div className="grid grid-cols-[1fr_1fr_1fr] gap-3 md:gap-4 mb-3">
+            <div className="grid grid-cols-[auto_1fr_1fr] gap-2 md:gap-4 mb-3">
               <div />
-              <div className="text-center py-3 text-sm font-bold tracking-wide uppercase text-muted-foreground">
+              <div className="text-center py-3 text-xs md:text-sm font-bold tracking-wide uppercase text-muted-foreground">
                 {t('partner.comparison.headers.1')}
               </div>
-              <div className="relative text-center py-3 text-sm font-bold tracking-wide uppercase text-brand-red-500 dark:text-brand-red-400">
+              <div className="relative text-center py-3 text-xs md:text-sm font-bold tracking-wide uppercase text-brand-red-500 dark:text-brand-red-400">
                 {t('partner.comparison.headers.2')}
                 <div className="absolute -bottom-1 left-1/4 right-1/4 h-0.5 bg-brand-red-500 dark:bg-brand-red-400 rounded-full" />
               </div>
@@ -140,30 +140,30 @@ export function ProfitSharingModel() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.35, delay: 0.05 * rowIdx }}
-                  className="grid grid-cols-[1fr_1fr_1fr] gap-3 md:gap-4 items-stretch"
+                  className="grid grid-cols-[auto_1fr_1fr] gap-2 md:gap-4 items-stretch"
                 >
                   {/* Label */}
-                  <div className="flex items-center px-5 py-4 rounded-xl bg-card border border-border-subtle">
-                    <span className="text-base font-bold font-cjk text-foreground">
+                  <div className="flex items-center px-3 py-3 md:px-5 md:py-4 rounded-xl bg-card border border-border-subtle">
+                    <span className="text-sm md:text-base font-bold font-cjk text-foreground">
                       {t(`partner.comparison.rows.${rowIdx}.0`)}
                     </span>
                   </div>
 
                   {/* Legacy */}
-                  <div className="flex items-center gap-2.5 px-5 py-4 rounded-xl bg-card border border-border-subtle text-muted-foreground">
-                    <CrossIcon className="w-5 h-5 shrink-0" />
-                    <span className="text-base">
+                  <div className="flex items-center gap-1.5 md:gap-2.5 px-3 py-3 md:px-5 md:py-4 rounded-xl bg-card border border-border-subtle text-muted-foreground">
+                    <CrossIcon className="w-4 h-4 md:w-5 md:h-5 shrink-0" />
+                    <span className="text-sm md:text-base">
                       {t(`partner.comparison.rows.${rowIdx}.1`)}
                     </span>
                   </div>
 
                   {/* UF9 */}
                   <div className={cn(
-                    'flex items-center gap-2.5 px-5 py-4 rounded-xl border text-foreground',
+                    'flex items-center gap-1.5 md:gap-2.5 px-3 py-3 md:px-5 md:py-4 rounded-xl border text-foreground',
                     'bg-brand-red-50 border-brand-red-200 dark:bg-brand-red-500/10 dark:border-brand-red-500/25'
                   )}>
-                    <TickIcon className="w-5 h-5 shrink-0" />
-                    <span className="text-base font-medium">
+                    <TickIcon className="w-4 h-4 md:w-5 md:h-5 shrink-0" />
+                    <span className="text-sm md:text-base font-medium">
                       {t(`partner.comparison.rows.${rowIdx}.2`)}
                     </span>
                   </div>
