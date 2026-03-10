@@ -25,6 +25,7 @@ dist-ssr
 
 # Large files
 *.pdf
+!public/pdf/**/*.pdf
 
 # Misc
 test.css

@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Shield, Clock, Eye, X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Shield, Clock, Eye, X, ChevronLeft, ChevronRight, Download } from 'lucide-react'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css'
 import { useTranslation } from '@/i18n'
@@ -80,15 +80,23 @@ function Lightbox({ images, index, onClose }: { images: string[]; index: number;
   )
 }
 
-function PdfCarousel({ label, dir, pages }: { label: string; dir: string; pages: number }) {
+function PdfCarousel({ label, dir, pages, downloadUrl, downloadLabel }: { label: string; dir: string; pages: number; downloadUrl: string; downloadLabel: string }) {
   const images = Array.from({ length: pages }, (_, i) => `${dir}/${i + 1}.png`)
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
   return (
     <>
       <div className="rounded-2xl border border-border/50 bg-card overflow-hidden">
-        <div className="px-5 py-3 border-b border-border/50 bg-muted/30">
+        <div className="px-5 py-3 border-b border-border/50 bg-muted/30 flex items-center justify-between">
           <span className="font-medium text-sm">{label}</span>
+          <a
+            href={downloadUrl}
+            download
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-red-500 hover:text-brand-red-400 transition-colors"
+          >
+            <Download size={14} />
+            {downloadLabel}
+          </a>
         </div>
         <Splide
           options={{
@@ -163,7 +171,7 @@ export function ShareholderCTA() {
           transition={{ duration: 0.5 }}
           className="mb-10"
         >
-          <PdfCarousel label={t('shareholderCTA.shareholderPdf')} dir={shareholder.dir} pages={shareholder.pages} />
+          <PdfCarousel label={t('shareholderCTA.shareholderPdf')} dir={shareholder.dir} pages={shareholder.pages} downloadUrl={shareholder.file} downloadLabel={t('shareholderCTA.downloadPdf')} />
         </motion.div>
 
         {/* Trust badges */}

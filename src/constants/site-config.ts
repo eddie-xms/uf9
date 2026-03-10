@@ -24,12 +24,12 @@ export const siteConfig = {
 
   pdf: {
     shareholder: {
-      en: { dir: '/pdf/en/uf9-shareholder', pages: 14 },
-      'zh-CN': { dir: '/pdf/cn/uf9-shareholder', pages: 14 },
-    } satisfies Record<Locale, { dir: string; pages: number }>,
+      en: { dir: '/pdf/en/uf9-shareholder', pages: 14, file: '/pdf/EN_UF9-shareholder.pdf' },
+      'zh-CN': { dir: '/pdf/cn/uf9-shareholder', pages: 14, file: '/pdf/CN_UF9-shareholder.pdf' },
+    } satisfies Record<Locale, { dir: string; pages: number; file: string }>,
     platform: {
-      en: { dir: '/pdf/en/uf9-platform', pages: 14 },
-      'zh-CN': { dir: '/pdf/cn/uf9-platform', pages: 14 },
-    } satisfies Record<Locale, { dir: string; pages: number }>,
+      en: { dir: '/pdf/en/uf9-platform', pages: 14, file: '/pdf/EN_UF9-platform.pdf' },
+      'zh-CN': { dir: '/pdf/cn/uf9-platform', pages: 14, file: '/pdf/CN_UF9-platform.pdf' },
+    } satisfies Record<Locale, { dir: string; pages: number; file: string }>,
   },
 } as const
