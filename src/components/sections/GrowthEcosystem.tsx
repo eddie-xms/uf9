@@ -110,10 +110,10 @@ function NetworkDiagram() {
 
         {/* Center hub */}
         <motion.g
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.8, type: 'spring', stiffness: 200 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
         >
           <circle cx="150" cy="150" r="18" fill="currentColor" fillOpacity={0.03} stroke="#E60000" strokeOpacity={0.15} strokeWidth={1} />
           <text x="150" y="147" textAnchor="middle" fontSize="8" fontWeight="800" fill="#E60000" fillOpacity={0.6}
@@ -132,10 +132,10 @@ function NetworkDiagram() {
         {NODES.map((node, i) => (
           <motion.g
             key={node.id}
-            initial={{ opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ type: 'spring', stiffness: 300, damping: 20, delay: i * 0.12 }}
+            transition={{ duration: 0.5, delay: i * 0.12 }}
           >
             {/* Pulsing ring */}
             <motion.circle
