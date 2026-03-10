@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { OrbitingCircles } from '@/components/ui/orbiting-circles'
+import { EdgeArc } from '@/components/ui/EdgeArc'
 import { FeatherLeft } from '@/components/icons/FeatherLeft'
 import { FeatherRight } from '@/components/icons/FeatherRight'
 import { useTranslation } from '@/i18n'
@@ -36,14 +37,19 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative pt-28 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 overflow-hidden min-h-screen flex items-center"
+      className="relative pt-28 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 min-h-screen flex items-center"
     >
       {/* Background Gradient */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(204,0,0,0.35),transparent)] hidden dark:block" />
         <div className="absolute inset-0 dark:bg-[radial-gradient(ellipse_60%_40%_at_80%_20%,rgba(230,0,0,0.1),transparent)] hidden dark:block" />
+        <div className="absolute inset-0 dark:bg-[radial-gradient(ellipse_40%_30%_at_20%_80%,rgba(204,0,0,0.08),transparent)] hidden dark:block" />
+        <div className="absolute inset-0 dark:bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(255,255,255,0.008)_2px,rgba(255,255,255,0.008)_4px)] hidden dark:block pointer-events-none" />
         <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-background hidden dark:block" />
       </div>
+
+      <EdgeArc side="left" />
+      <EdgeArc side="right" />
 
       <div className="container-main relative">
         <div className="flex flex-col lg:flex-row gap-0 items-center max-w-4xl mx-auto">
@@ -54,7 +60,7 @@ export function Hero() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
               className={`${locale === 'zh-CN' ? 'text-5xl md:text-6xl lg:text-7xl' : 'text-4xl md:text-5xl lg:text-6xl'} font-bold font-display leading-tight`}
             >
               {t('hero.title1')}
@@ -67,7 +73,7 @@ export function Hero() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.35 }}
               className="text-xl text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0"
             >
               {t('hero.subtitle')}
@@ -77,7 +83,7 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
               className="flex flex-wrap justify-center lg:justify-start gap-4"
             >
               <Button variant="primary" size="lg" rounded="full" className="group">
@@ -93,7 +99,7 @@ export function Hero() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
               className="text-base text-faint-foreground italic"
             >
               {t('hero.tagline')}
@@ -108,8 +114,11 @@ export function Hero() {
             className="hidden md:flex relative h-80 lg:h-96 lg:flex-none lg:w-80 flex-col items-center justify-center"
           >
             {/* Center Logo */}
-            <div className="z-10 w-20 h-20 rounded-full bg-card border-2 border-brand-red-500/30 shadow-[0_0_30px_rgba(230,0,0,0.15)] flex items-center justify-center">
-              <img src="/uf9.png" alt="UF9" className="h-12 w-auto" />
+            <div className="z-10 relative">
+              <div className="absolute inset-0 rounded-full animate-pulse-ring border-2 border-brand-red-500/30" />
+              <div className="w-20 h-20 rounded-full bg-card border-2 border-brand-red-500/30 shadow-[0_0_40px_rgba(230,0,0,0.2),0_0_80px_rgba(230,0,0,0.08)] flex items-center justify-center relative">
+                <img src="/uf9.png" alt="UF9" className="h-12 w-auto" />
+              </div>
             </div>
 
             {/* Inner orbit — providers */}

@@ -5,7 +5,7 @@
     "about": "关于我们",
     "login": "登录",
     "register": "注册",
-    "investors": "股东",
+    "shareholders": "股东",
     "platform": "平台",
     "profitModel": "盈利模式",
     "dividends": "分红",
@@ -13,7 +13,7 @@
     "stats": "数据",
     "download": "下载"
   },
-  "investorHero": {
+  "shareholderHero": {
     "badge": "股东权益计划",
     "title1": "携手 ",
     "title2": "UF9",
@@ -85,7 +85,9 @@
     "profitShare": "利润份额",
     "projectedDaily": "预计每日",
     "calculatorTitle": "分红计算器",
-    "calculatorSubtitle": "调整滑块查看您的预计每日分红"
+    "calculatorSubtitle": "调整滑块查看您的预计每日分红",
+    "disclaimer1": "无隐藏费用，无人工计算，100% 透明 · 公平 · 公正。",
+    "disclaimer2": "计算表仅作为参考概念，股东占成比例需由上级股东决定。"
   },
   "coreStrengths": {
     "subtitle": "我们不只是搭建平台 — 我们构建完整的利润增长系统。"
@@ -99,7 +101,11 @@
       { "title": "直播主与KOL", "desc": "直播流量、互动参与、玩家获取" },
       { "title": "代理", "desc": "网络建设、推荐与团队增长" }
     ],
-    "tagline": "平台 + 直播主 + 代理 = 三方共赢盈利生态"
+    "tagline": "平台 + 直播主 + 代理 = 三方共赢盈利生态",
+    "chart": {
+      "threeWay": "三方",
+      "ecosystem": "生态系统"
+    }
   },
   "retentionSystem": {
     "heading": "玩家留存",
@@ -122,12 +128,12 @@
   "closedLoopGrowth": {
     "systemSummary": "获客 + 激励 + 留存 + 变现 + 分红 = 完整闭环增长系统"
   },
-  "investorCTA": {
-    "heading": "准备好",
-    "headingHighlight": "与我们共同成长？",
-    "subtitle": "加入 UF9 股东计划，开始从全球娱乐平台获取每日分红。",
-    "ctaPrimary": "联系我们",
-    "ctaSecondary": "下载白皮书",
+  "shareholderCTA": {
+    "heading": "公司",
+    "headingHighlight": "资料",
+    "subtitle": "查阅我们的股东计划及平台介绍文档",
+    "shareholderPdf": "股东计划",
+    "platformPdf": "平台简介",
     "badges": ["国际正规牌照", "每日结算", "100% 透明"]
   },
   "hero": {
@@ -302,7 +308,8 @@
       }
     },
     "comparison": {
-      "title": "UF9 vs 传统平台",
+      "heading": "UF9 vs",
+      "headingHighlight": "传统平台",
       "subtitle": "看看 UF9 股东模式如何全面超越传统代理平台",
       "headers": ["对比项", "传统平台", "UF9 平台"],
       "rows": [
@@ -345,7 +352,8 @@
   "globalPayment": {
     "heading": "全球",
     "headingHighlight": "支付网络",
-    "subtitle": "覆盖东南亚的无缝金融基础设施，支持多币种与加密货币"
+    "subtitle": "覆盖东南亚的无缝金融基础设施，支持多币种与加密货币",
+    "paymentMethods": "支付方式"
   },
   "download": {
     "badge": "立即开始",
@@ -369,7 +377,7 @@
     "responsible": "负责任博彩",
     "age": "18+",
     "quickLinks": "快捷链接",
-    "quickLinksItems": ["投资者", "平台", "游戏大厅", "VIP 计划", "关于我们"],
+    "quickLinksItems": ["股东", "平台", "游戏大厅", "VIP 计划", "关于我们"],
     "gamesTitle": "游戏",
     "gamesItems": ["老虎机", "真人娱乐城", "体育博彩", "P2P 德州扑克", "电竞平台", "高频游戏", "热门棋牌区"],
     "support": "支持",

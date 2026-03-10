@@ -32,15 +32,16 @@ export function OrbitingCircles({
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
-          className="pointer-events-none absolute inset-0 size-full"
+          className="pointer-events-none absolute inset-0 size-full overflow-visible"
         >
           <circle
             cx="50%"
             cy="50%"
             r={radius}
             fill="none"
-            stroke="#6b7280"
-            strokeWidth={1}
+            stroke="currentColor"
+            strokeWidth={1.5}
+            className="text-muted-foreground/40"
           />
         </svg>
       )}

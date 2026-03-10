@@ -62,14 +62,17 @@ export function ClosedLoopGrowth() {
                 return (
                   <div
                     key={i}
-                    className="absolute -ml-6 -mt-6 flex flex-col items-center gap-1 z-10 group"
+                    className="absolute -ml-8 -mt-6 w-16 flex flex-col items-center gap-1 z-10 group"
                     style={{ left: `${x}%`, top: `${y}%` }}
                   >
                     <div className="w-12 h-12 rounded-full bg-card border border-brand-red-500/20 flex items-center justify-center text-brand-red-500 shadow-[0_2px_12px_rgba(230,0,0,0.08)] group-hover:border-brand-red-500/40 group-hover:shadow-[0_2px_20px_rgba(230,0,0,0.15)] transition-all duration-300 cursor-default">
                       <Icon size={18} strokeWidth={1.8} />
                     </div>
-                    <span className="text-[9px] font-bold text-muted-foreground whitespace-nowrap font-mono tracking-wide">
+                    <span className="text-xs font-bold text-muted-foreground whitespace-nowrap font-mono tracking-wide">
                       {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <span className="text-[10px] md:text-xs font-semibold font-cjk text-foreground-secondary text-center leading-tight">
+                      {t(`partner.closedLoop.pillars.${i}.title`)}
                     </span>
                   </div>
                 )

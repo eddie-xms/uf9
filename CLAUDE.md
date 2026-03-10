@@ -20,7 +20,7 @@ No test framework is configured.
 **Path alias:** `@/` maps to `src/` (configured in both `vite.config.ts` and `tsconfig.app.json`)
 
 **Routing:** Two pages served via React Router:
-- `/investors` — `InvestorsPage` (default, `/` redirects here)
+- `/shareholders` — `ShareholdersPage` (default, `/` redirects here)
 - `/platform` — `PlatformPage`
 
 Both pages are wrapped in `LanguageProvider` → `ThemeProvider` → `Navbar` + `Footer` layout (see `App.tsx`).

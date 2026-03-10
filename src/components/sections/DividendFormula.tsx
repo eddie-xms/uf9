@@ -177,7 +177,7 @@ export function DividendFormula() {
                     <input
                       type="range"
                       min={10}
-                      max={100}
+                      max={50}
                       step={5}
                       value={shareholding}
                       onChange={(e) => setShareholding(Number(e.target.value))}
@@ -216,9 +216,10 @@ export function DividendFormula() {
                   </div>
                 </div>
 
-                <p className="text-center text-sm text-muted-foreground">
-                  {t('partner.dividend.highlight')}
-                </p>
+                <div className="text-center text-sm text-muted-foreground space-y-1">
+                  <p>{t('dividendFormula.disclaimer1')}</p>
+                  <p>{t('dividendFormula.disclaimer2')}</p>
+                </div>
               </div>
             </div>
           </motion.div>

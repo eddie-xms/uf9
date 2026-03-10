@@ -5,7 +5,7 @@
     "about": "About Us",
     "login": "Login",
     "register": "Register",
-    "investors": "Shareholders",
+    "shareholders": "Shareholders",
     "platform": "Platform",
     "profitModel": "Profit Model",
     "dividends": "Dividends",
@@ -13,7 +13,7 @@
     "stats": "Statistics",
     "download": "Download"
   },
-  "investorHero": {
+  "shareholderHero": {
     "badge": "Shareholder Equity Program",
     "title1": "Build Wealth with ",
     "title2": "UF9",
@@ -85,7 +85,9 @@
     "profitShare": "Profit Share",
     "projectedDaily": "Projected Daily",
     "calculatorTitle": "Dividend Calculator",
-    "calculatorSubtitle": "Adjust the sliders to see your projected daily dividend"
+    "calculatorSubtitle": "Adjust the sliders to see your projected daily dividend",
+    "disclaimer1": "No hidden fees. No manual calculations. 100% Transparent · Fair · Just.",
+    "disclaimer2": "The calculation table is for reference purposes only. The shareholder profit-sharing percentage is determined by the upper-level shareholder."
   },
   "coreStrengths": {
     "subtitle": "We don't just build a platform — We build a complete profit growth system."
@@ -99,7 +101,11 @@
       { "title": "Streamers & KOLs", "desc": "Live traffic, engagement, and player acquisition" },
       { "title": "Agents", "desc": "Network building, referrals, and team growth" }
     ],
-    "tagline": "Platform + Streamer + Agent = Three-Way Profit Ecosystem"
+    "tagline": "Platform + Streamer + Agent = Three-Way Profit Ecosystem",
+    "chart": {
+      "threeWay": "3-WAY",
+      "ecosystem": "ECOSYSTEM"
+    }
   },
   "retentionSystem": {
     "heading": "Player Retention",
@@ -122,12 +128,12 @@
   "closedLoopGrowth": {
     "systemSummary": "Acquisition + Incentives + Retention + Monetization + Dividends = Complete Closed-Loop Growth System"
   },
-  "investorCTA": {
-    "heading": "Ready to",
-    "headingHighlight": "Grow With Us?",
-    "subtitle": "Join the UF9 shareholder program and start earning daily dividends from a global entertainment platform.",
-    "ctaPrimary": "Contact Us",
-    "ctaSecondary": "Download Whitepaper",
+  "shareholderCTA": {
+    "heading": "Company",
+    "headingHighlight": "Documents",
+    "subtitle": "Download and review our shareholder and platform documentation",
+    "shareholderPdf": "Shareholder Program",
+    "platformPdf": "Platform Overview",
     "badges": ["Internationally Licensed", "Daily Settlement", "100% Transparent"]
   },
   "hero": {
@@ -302,7 +308,8 @@
       }
     },
     "comparison": {
-      "title": "UF9 vs Legacy Platforms",
+      "heading": "UF9 vs",
+      "headingHighlight": "Legacy Platforms",
       "subtitle": "See how the UF9 shareholder model outperforms traditional agent-based platforms",
       "headers": ["Feature", "Legacy Platform", "UF9 Platform"],
       "rows": [
@@ -345,7 +352,8 @@
   "globalPayment": {
     "heading": "Global",
     "headingHighlight": "Payment Network",
-    "subtitle": "Seamless financial infrastructure across Southeast Asia with multi-currency and crypto support"
+    "subtitle": "Seamless financial infrastructure across Southeast Asia with multi-currency and crypto support",
+    "paymentMethods": "Payment Methods"
   },
   "download": {
     "badge": "Get Started",
@@ -369,7 +377,7 @@
     "responsible": "Responsible Gaming",
     "age": "18+",
     "quickLinks": "Quick Links",
-    "quickLinksItems": ["Investors", "Platform", "Game Lobby", "VIP Program", "About Us"],
+    "quickLinksItems": ["Shareholders", "Platform", "Game Lobby", "VIP Program", "About Us"],
     "gamesTitle": "Games",
     "gamesItems": ["Slot Games", "Live Casino", "Sportsbook", "P2P Poker", "Esports", "High-Frequency Games", "Board & Card Games"],
     "support": "Support",

@@ -6,10 +6,11 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 import { LanguageProvider } from '@/i18n'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
-import { InvestorsPage } from '@/pages/InvestorsPage'
+import { ScrollToTop } from '@/components/ui/ScrollToTop'
+import { ShareholdersPage } from '@/pages/ShareholdersPage'
 import { PlatformPage } from '@/pages/PlatformPage'
 
-function ScrollToTop() {
+function ScrollReset() {
   const { pathname } = useLocation()
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -24,18 +25,19 @@ function App() {
     <LanguageProvider>
       <ThemeProvider defaultTheme="dark">
         <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
-          <ScrollToTop />
+          <ScrollReset />
           <Navbar />
           <main>
             <AnimatePresence mode="wait">
               <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<Navigate to="/investors" replace />} />
-                <Route path="/investors" element={<InvestorsPage />} />
+                <Route path="/" element={<Navigate to="/shareholders" replace />} />
+                <Route path="/shareholders" element={<ShareholdersPage />} />
                 <Route path="/platform" element={<PlatformPage />} />
               </Routes>
             </AnimatePresence>
           </main>
           <Footer />
+          <ScrollToTop />
         </div>
       </ThemeProvider>
     </LanguageProvider>

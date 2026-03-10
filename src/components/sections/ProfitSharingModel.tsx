@@ -112,8 +112,10 @@ export function ProfitSharingModel() {
           className="mt-16"
         >
           <div className="text-center mb-10">
-            <h3 className="text-3xl font-bold font-cjk mb-2">{t('partner.comparison.title')}</h3>
-            <p className="text-base text-muted-foreground">{t('partner.comparison.subtitle')}</p>
+            <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold font-cjk mb-4">
+              {t('partner.comparison.heading')} <span className="text-gradient-red">{t('partner.comparison.headingHighlight')}</span>
+            </h3>
+            <p className="text-muted-foreground text-xl">{t('partner.comparison.subtitle')}</p>
           </div>
 
           <div>
@@ -150,7 +152,7 @@ export function ProfitSharingModel() {
                   {/* Legacy */}
                   <div className="flex items-center gap-2.5 px-5 py-4 rounded-xl bg-card border border-border-subtle text-muted-foreground">
                     <CrossIcon className="w-5 h-5 shrink-0" />
-                    <span className="text-sm">
+                    <span className="text-base">
                       {t(`partner.comparison.rows.${rowIdx}.1`)}
                     </span>
                   </div>
@@ -161,7 +163,7 @@ export function ProfitSharingModel() {
                     'bg-brand-red-50 border-brand-red-200 dark:bg-brand-red-500/10 dark:border-brand-red-500/25'
                   )}>
                     <TickIcon className="w-5 h-5 shrink-0" />
-                    <span className="text-sm font-medium">
+                    <span className="text-base font-medium">
                       {t(`partner.comparison.rows.${rowIdx}.2`)}
                     </span>
                   </div>

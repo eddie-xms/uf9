@@ -8,15 +8,20 @@ import {
   UsdtIcon,
   DuitNowIcon,
 } from '@/components/icons/PaymentIcons'
+import flagMY from '@/components/icons/flag/my.png'
+import flagSG from '@/components/icons/flag/sg.png'
+import flagVN from '@/components/icons/flag/vn.png'
+import flagTH from '@/components/icons/flag/thai.png'
+import flagID from '@/components/icons/flag/id.png'
 
-const CURRENCY_FLAGS: Record<string, string> = {
-  MYR: '#010066',
-  SGD: '#EF3340',
-  VND: '#DA251D',
-  THB: '#A51931',
-  IDR: '#FF0000',
-  USDT: '#26A17B',
-}
+const CURRENCIES = [
+  { code: 'MYR', flag: flagMY, country: 'Malaysia' },
+  { code: 'SGD', flag: flagSG, country: 'Singapore' },
+  { code: 'VND', flag: flagVN, country: 'Vietnam' },
+  { code: 'THB', flag: flagTH, country: 'Thailand' },
+  { code: 'IDR', flag: flagID, country: 'Indonesia' },
+  { code: 'USDT', flag: '', country: 'Tether' },
+]
 
 const MAP_POINTS = [
   { id: 'TH', label: 'Thailand', currency: 'THB', x: 140, y: 85 },
@@ -244,7 +249,40 @@ export function GlobalPayment() {
               {t('partner.systems.payment.desc')}
             </p>
 
-            <ul className="space-y-2">
+            {/* Currency grid with flags */}
+            <div className="grid grid-cols-3 gap-2">
+              {CURRENCIES.map((c) => (
+                <div
+                  key={c.code}
+                  className="flex flex-col items-center gap-1 py-3 px-2 rounded-xl bg-background-secondary dark:bg-surface-800/50 border border-border-subtle hover:border-brand-red-500/30 transition-colors"
+                >
+                  {c.flag ? (
+                    <img src={c.flag} alt={c.country} className="w-8 h-8 rounded-full object-cover" />
+                  ) : (
+                    <UsdtIcon size={32} />
+                  )}
+                  <span className="text-sm font-mono font-bold text-foreground">{c.code}</span>
+                  <span className="text-[10px] text-muted-foreground">{c.country}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Payment methods */}
+            <div className="mt-6 pt-5 border-t border-border-subtle">
+              <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest mb-3">
+                {t('globalPayment.paymentMethods')}
+              </p>
+              <div className="flex items-center gap-3 flex-wrap">
+                <VisaIcon size={32} className="opacity-60 hover:opacity-100 transition-opacity" />
+                <MastercardIcon size={32} className="opacity-60 hover:opacity-100 transition-opacity" />
+                <BitcoinIcon size={32} className="opacity-60 hover:opacity-100 transition-opacity" />
+                <UsdtIcon size={32} className="opacity-60 hover:opacity-100 transition-opacity" />
+                <DuitNowIcon size={32} className="opacity-60 hover:opacity-100 transition-opacity" />
+              </div>
+            </div>
+
+            {/* Feature points */}
+            <ul className="mt-5 space-y-1.5">
               {tArray('partner.systems.payment.points').map((point) => (
                 <li key={point} className="flex items-center gap-2 text-sm text-foreground-secondary">
                   <div className="w-1 h-1 rounded-full shrink-0 bg-brand-red-400" />
@@ -252,33 +290,6 @@ export function GlobalPayment() {
                 </li>
               ))}
             </ul>
-
-            {/* Currency grid with flag dots */}
-            <div className="mt-6 grid grid-cols-3 sm:grid-cols-6 gap-2">
-              {['MYR', 'SGD', 'VND', 'THB', 'IDR', 'USDT'].map((currency) => (
-                <div
-                  key={currency}
-                  className="text-center py-2 px-3 rounded-lg bg-background-secondary dark:bg-surface-800/50 border border-border-subtle flex items-center justify-center gap-1.5"
-                >
-                  <span
-                    className="inline-block w-1.5 h-1.5 rounded-full shrink-0"
-                    style={{ backgroundColor: CURRENCY_FLAGS[currency] }}
-                  />
-                  <span className="text-sm font-mono font-bold text-foreground-secondary">
-                    {currency}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            {/* Payment method icons */}
-            <div className="mt-4 flex justify-center items-center gap-4 flex-wrap">
-              <VisaIcon size={28} className="opacity-60 hover:opacity-100 transition-opacity" />
-              <MastercardIcon size={28} className="opacity-60 hover:opacity-100 transition-opacity" />
-              <BitcoinIcon size={28} className="opacity-60 hover:opacity-100 transition-opacity" />
-              <UsdtIcon size={28} className="opacity-60 hover:opacity-100 transition-opacity" />
-              <DuitNowIcon size={28} className="opacity-60 hover:opacity-100 transition-opacity" />
-            </div>
           </motion.div>
         </div>
       </div>

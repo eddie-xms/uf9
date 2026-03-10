@@ -75,9 +75,10 @@ export function GameCategories() {
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
         >
           {highlights.map((item) => (
-            <div
+            <motion.div
               key={item.label}
-              className="flex items-center gap-3 p-4 rounded-2xl bg-card border border-border-subtle"
+              whileHover={{ scale: 1.02, transition: { type: 'spring', stiffness: 400, damping: 25 } }}
+              className="flex items-center gap-3 p-4 rounded-2xl bg-card dark:bg-glass-bg dark:backdrop-blur-sm border border-border-subtle dark:border-glass-border hover:border-brand-red-500/25 transition-colors duration-300"
             >
               <div className="w-10 h-10 rounded-xl bg-brand-red-500/10 flex items-center justify-center text-brand-red-400 shrink-0">
                 <item.icon size={20} />
@@ -86,7 +87,7 @@ export function GameCategories() {
                 <p className="text-base font-bold text-foreground">{item.label}</p>
                 <p className="text-sm text-faint-foreground">{item.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
 
@@ -96,20 +97,20 @@ export function GameCategories() {
           <button
             onClick={() => scrollTo(activeIndex - 1)}
             className={cn(
-              'absolute -left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-card border border-border-subtle shadow-lg flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors cursor-pointer',
+              'absolute -left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-card border border-border-subtle shadow-lg flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-brand-red-500/30 hover:shadow-[0_0_20px_rgba(230,0,0,0.15)] transition-all duration-300 cursor-pointer group/nav',
               activeIndex === 0 && 'opacity-30 pointer-events-none'
             )}
           >
-            <ChevronLeft size={20} />
+            <ChevronLeft size={20} className="group-hover/nav:-translate-x-0.5 transition-transform" />
           </button>
           <button
             onClick={() => scrollTo(activeIndex + 1)}
             className={cn(
-              'absolute -right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-card border border-border-subtle shadow-lg flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors cursor-pointer',
+              'absolute -right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-card border border-border-subtle shadow-lg flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-brand-red-500/30 hover:shadow-[0_0_20px_rgba(230,0,0,0.15)] transition-all duration-300 cursor-pointer group/nav',
               activeIndex === gameFeatures.length - 1 && 'opacity-30 pointer-events-none'
             )}
           >
-            <ChevronRight size={20} />
+            <ChevronRight size={20} className="group-hover/nav:translate-x-0.5 transition-transform" />
           </button>
 
           {/* Carousel track */}
@@ -131,59 +132,64 @@ export function GameCategories() {
                     whileHover={{ y: -6 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 25 }}
                   >
-                    <div className="h-full rounded-2xl bg-card border border-border-subtle overflow-hidden group hover:border-brand-red-500/30 transition-all duration-300 hover:shadow-[0_8px_40px_rgba(230,0,0,0.12)]">
-                      {/* Image Zone */}
-                      <div className="relative h-[220px] overflow-hidden">
-                        <img
-                          src={game.image}
-                          alt={t(`${prefix}.title`)}
-                          loading="lazy"
-                          className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110"
-                        />
-                        {/* Dark vignette overlay */}
-                        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.4))]" />
-                        {/* Bottom gradient fade to card bg */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--card)] via-[var(--card)]/30 to-transparent" />
-                        {/* Top edge subtle red glow on hover */}
-                        <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-brand-red-500 to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
+                    {/* Gradient border wrapper */}
+                    <div className="rounded-2xl p-px bg-linear-to-b from-border-subtle/50 to-transparent hover:from-brand-red-500/40 hover:via-brand-red-500/20 hover:to-transparent transition-all duration-500 group">
+                      <div className="h-full rounded-[calc(1rem-1px)] bg-card overflow-hidden hover:shadow-[0_8px_40px_rgba(230,0,0,0.12)] transition-shadow duration-300">
+                        {/* Image Zone */}
+                        <div className="relative h-[220px] overflow-hidden">
+                          <img
+                            src={game.image}
+                            alt={t(`${prefix}.title`)}
+                            loading="lazy"
+                            className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110"
+                          />
+                          {/* Dark vignette overlay */}
+                          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.4))]" />
+                          {/* Bottom gradient fade to card bg */}
+                          <div className="absolute inset-0 bg-linear-to-t from-[var(--card)] via-[var(--card)]/30 to-transparent" />
+                          {/* Red tint overlay on hover */}
+                          <div className="absolute inset-0 bg-brand-red-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                          {/* Top edge red glow on hover */}
+                          <div className="absolute inset-x-0 top-0 h-[3px] bg-linear-to-r from-transparent via-brand-red-500 to-transparent opacity-0 group-hover:opacity-60 transition-opacity duration-500 blur-[1px]" />
 
-                        {/* Icon badge — bottom left */}
-                        <div className="absolute bottom-3 left-4 w-9 h-9 rounded-full bg-[var(--glass-bg)] backdrop-blur-md border border-[var(--glass-border)] flex items-center justify-center shadow-lg">
-                          <game.icon className="w-[18px] h-[18px] text-brand-red-400" />
+                          {/* Icon badge — bottom left */}
+                          <div className="absolute bottom-3 left-4 w-9 h-9 rounded-full bg-[var(--glass-bg)] backdrop-blur-md border border-[var(--glass-border)] flex items-center justify-center shadow-lg">
+                            <game.icon className="w-[18px] h-[18px] text-brand-red-400" />
+                          </div>
+
+                          {/* Count pill — bottom right */}
+                          <div className="absolute bottom-3 right-4 px-2.5 py-1 rounded-full bg-[var(--glass-bg)] backdrop-blur-md border border-[var(--glass-border)] shadow-lg">
+                            <span className="text-xs font-semibold text-foreground">
+                              {t(`${prefix}.count`)} {t('games.gamesAvailable')}
+                            </span>
+                          </div>
                         </div>
 
-                        {/* Count pill — bottom right */}
-                        <div className="absolute bottom-3 right-4 px-2.5 py-1 rounded-full bg-[var(--glass-bg)] backdrop-blur-md border border-[var(--glass-border)] shadow-lg">
-                          <span className="text-xs font-semibold text-foreground">
-                            {t(`${prefix}.count`)} {t('games.gamesAvailable')}
-                          </span>
+                        {/* Content Zone */}
+                        <div className="p-5 pt-0 flex flex-col flex-1 border-t border-border-subtle/50">
+                          <h3 className="text-xl font-bold font-cjk text-foreground mb-1 mt-3">
+                            {t(`${prefix}.title`)}
+                          </h3>
+                          <p className="text-sm text-muted-foreground leading-relaxed mb-3 line-clamp-2">
+                            {t(`${prefix}.description`)}
+                          </p>
+
+                          {/* Compact 2-col bullets */}
+                          <ul className="grid grid-cols-2 gap-x-3 gap-y-1.5 mb-5">
+                            {[1, 2, 3, 4].map((n) => (
+                              <li key={n} className="flex items-start gap-1.5 text-xs text-foreground-secondary">
+                                <div className="w-1 h-1 rounded-full bg-brand-red-400 shrink-0 mt-1.5 group-hover:scale-125 transition-transform" style={{ transitionDelay: `${n * 50}ms` }} />
+                                <span className="leading-tight">{t(`${prefix}.bullet${n}`)}</span>
+                              </li>
+                            ))}
+                          </ul>
+
+                          {/* CTA */}
+                          <Button variant="primary" size="sm" rounded="full" className="group/btn self-start">
+                            {t('games.playNow')}
+                            <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+                          </Button>
                         </div>
-                      </div>
-
-                      {/* Content Zone */}
-                      <div className="p-5 pt-2 flex flex-col flex-1">
-                        <h3 className="text-xl font-bold font-cjk text-foreground mb-1">
-                          {t(`${prefix}.title`)}
-                        </h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed mb-3 line-clamp-2">
-                          {t(`${prefix}.description`)}
-                        </p>
-
-                        {/* Compact 2-col bullets */}
-                        <ul className="grid grid-cols-2 gap-x-3 gap-y-1.5 mb-5">
-                          {[1, 2, 3, 4].map((n) => (
-                            <li key={n} className="flex items-start gap-1.5 text-xs text-foreground-secondary">
-                              <div className="w-1 h-1 rounded-full bg-brand-red-400 shrink-0 mt-1.5" />
-                              <span className="leading-tight">{t(`${prefix}.bullet${n}`)}</span>
-                            </li>
-                          ))}
-                        </ul>
-
-                        {/* CTA */}
-                        <Button variant="primary" size="sm" rounded="full" className="group/btn self-start">
-                          {t('games.playNow')}
-                          <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
-                        </Button>
                       </div>
                     </div>
                   </motion.div>
@@ -199,10 +205,10 @@ export function GameCategories() {
                 key={game.key}
                 onClick={() => scrollTo(i)}
                 className={cn(
-                  'w-2 h-2 rounded-full transition-all duration-300 cursor-pointer',
+                  'h-2.5 rounded-full transition-all duration-300 cursor-pointer',
                   i === activeIndex
-                    ? 'w-6 bg-brand-red-400'
-                    : 'bg-border hover:bg-muted-foreground'
+                    ? 'w-8 bg-brand-red-400 shadow-[0_0_8px_rgba(230,0,0,0.4)]'
+                    : 'w-2.5 bg-border hover:bg-muted-foreground'
                 )}
               />
             ))}

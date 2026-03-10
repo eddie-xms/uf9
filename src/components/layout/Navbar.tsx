@@ -2,14 +2,14 @@ import { useState } from 'react'
 import { Menu, X, TrendingUp, Gamepad2 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { investorNavLinks, platformNavLinks } from '@/constants/navigation'
+import { shareholderNavLinks, platformNavLinks } from '@/constants/navigation'
 import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler'
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher'
 import { useTranslation } from '@/i18n'
 import { cn } from '@/lib/utils'
 
 const tabs = [
-  { key: 'investors', path: '/investors', labelKey: 'nav.investors', icon: TrendingUp },
+  { key: 'shareholders', path: '/shareholders', labelKey: 'nav.shareholders', icon: TrendingUp },
   { key: 'platform', path: '/platform', labelKey: 'nav.platform', icon: Gamepad2 },
 ] as const
 
@@ -19,8 +19,8 @@ export function Navbar() {
   const location = useLocation()
   const navigate = useNavigate()
 
-  const activeTab = location.pathname.startsWith('/platform') ? 'platform' : 'investors'
-  const contextNavLinks = activeTab === 'investors' ? investorNavLinks : platformNavLinks
+  const activeTab = location.pathname.startsWith('/platform') ? 'platform' : 'shareholders'
+  const contextNavLinks = activeTab === 'shareholders' ? shareholderNavLinks : platformNavLinks
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 pt-4">
@@ -28,7 +28,7 @@ export function Navbar() {
         <div className="flex items-center justify-center gap-4">
           {/* Desktop Pill Navbar */}
           <div className="hidden lg:flex items-center gap-5 px-5 py-2.5 rounded-full bg-background-secondary/80 backdrop-blur-lg border border-border-subtle shadow-lg shadow-shadow">
-            <a href="/" onClick={(e) => { e.preventDefault(); navigate('/investors') }} className="shrink-0">
+            <a href="/" onClick={(e) => { e.preventDefault(); navigate('/shareholders') }} className="shrink-0">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 10 }}
@@ -89,7 +89,7 @@ export function Navbar() {
           {/* Mobile Header */}
           <div className="flex lg:hidden w-full items-center justify-between">
             <div className="flex items-center gap-3 px-4 py-2.5 rounded-full bg-background-secondary/80 backdrop-blur-lg border border-border-subtle shadow-lg shadow-shadow">
-              <a href="/" onClick={(e) => { e.preventDefault(); navigate('/investors') }} className="shrink-0">
+              <a href="/" onClick={(e) => { e.preventDefault(); navigate('/shareholders') }} className="shrink-0">
                 <img src="/logo.png" alt="UF9" className="h-7 w-auto" />
               </a>
               <button

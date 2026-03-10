@@ -32,7 +32,7 @@ function NetworkDiagram() {
       {/* Radial glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(230,0,0,0.04),transparent_70%)] hidden dark:block" />
 
-      <svg viewBox="0 0 300 280" className="w-full max-w-sm h-auto relative">
+      <svg viewBox="0 0 300 280" className="w-full max-w-md h-auto relative">
         <defs>
           <linearGradient id="edgeGrad" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="#E60000" stopOpacity="0.5" />
@@ -119,12 +119,12 @@ function NetworkDiagram() {
           <text x="150" y="147" textAnchor="middle" fontSize="8" fontWeight="800" fill="#E60000" fillOpacity={0.6}
             fontFamily="Inter, sans-serif" letterSpacing="0.1em"
           >
-            3-WAY
+            {t('growthEcosystem.chart.threeWay')}
           </text>
           <text x="150" y="158" textAnchor="middle" fontSize="6" fill="currentColor" fillOpacity={0.4}
             fontFamily="Inter, sans-serif"
           >
-            ECOSYSTEM
+            {t('growthEcosystem.chart.ecosystem')}
           </text>
         </motion.g>
 
@@ -185,8 +185,8 @@ function NetworkDiagram() {
               y={node.y + (i === 0 ? -32 : 40)}
               textAnchor="middle"
               className="fill-foreground"
-              fontSize="10"
-              fontWeight="700"
+              fontSize="12"
+              fontWeight="800"
               fontFamily="'Noto Sans TC', sans-serif"
             >
               {t(`growthEcosystem.participants.${node.label}.title`)}
@@ -212,7 +212,7 @@ export function GrowthEcosystem() {
   const { t, tArray } = useTranslation()
 
   return (
-    <section id="growth" className="relative py-14 md:py-20">
+    <section id="growth" className="relative py-16 md:py-24">
       <div className="absolute inset-0 bg-linear-to-b from-background via-background-secondary/20 to-background hidden dark:block" />
 
       <div className="relative container-main">
@@ -221,7 +221,7 @@ export function GrowthEcosystem() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-cjk mb-4">
             {t('growthEcosystem.heading')} <span className="text-gradient-red">{t('growthEcosystem.headingHighlight')}</span>
@@ -232,7 +232,7 @@ export function GrowthEcosystem() {
         </motion.div>
 
         {/* Two-column: Network visualization left, Cards right */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
           {/* Left: Pure SVG network diagram */}
           <NetworkDiagram />
 
@@ -242,7 +242,7 @@ export function GrowthEcosystem() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="flex flex-col gap-4"
+            className="flex flex-col gap-5"
           >
             {/* Three participant cards */}
             {[0, 1, 2].map((i) => {
@@ -255,7 +255,7 @@ export function GrowthEcosystem() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.1 + i * 0.08 }}
                   className={cn(
-                    'bg-card rounded-2xl p-5 border transition-colors relative overflow-hidden',
+                    'bg-card rounded-2xl p-6 border transition-colors relative overflow-hidden',
                     i === 1
                       ? 'border-brand-red-500/30 shadow-[0_0_30px_-10px_rgba(230,0,0,0.12)]'
                       : 'border-border-subtle hover:border-brand-red-500/20'
@@ -263,16 +263,16 @@ export function GrowthEcosystem() {
                 >
                   <div className="flex items-start gap-4">
                     <div className={cn(
-                      'w-10 h-10 rounded-xl flex items-center justify-center shrink-0',
+                      'w-12 h-12 rounded-xl flex items-center justify-center shrink-0',
                       'bg-brand-red-500/15 text-brand-red-400'
                     )}>
-                      <Icon size={20} />
+                      <Icon size={22} />
                     </div>
                     <div>
-                      <h4 className="text-base font-bold font-cjk text-foreground mb-1">
+                      <h4 className="text-lg font-bold font-cjk text-foreground mb-1">
                         {t(`growthEcosystem.participants.${i}.title`)}
                       </h4>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
+                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                         {t(`growthEcosystem.participants.${i}.desc`)}
                       </p>
                     </div>
@@ -300,7 +300,7 @@ export function GrowthEcosystem() {
             </motion.div>
 
             {/* Traffic system detail card */}
-            <div className="bg-card rounded-2xl p-5 border border-border-subtle relative overflow-hidden flex-1">
+            <div className="bg-card rounded-2xl p-6 border border-border-subtle relative overflow-hidden flex-1">
               <div className="absolute top-0 right-0 w-24 h-24 opacity-10 blur-3xl bg-brand-red-500 hidden dark:block" />
               <div className="relative">
                 <div className="flex items-center gap-2 mb-2">
